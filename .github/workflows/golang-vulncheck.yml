@@ -1,0 +1,2 @@
+- name: Golang Vulncheck
+  uses: Templum/govulncheck-action@v0.10.1
