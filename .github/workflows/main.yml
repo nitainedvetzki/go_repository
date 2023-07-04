@@ -1,0 +1,17 @@
+name: Send Email on Push
+
+on:
+  push:
+    branches:
+      - '*'
+
+jobs:
+  send_email:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Send Email
+        uses: nitaiapiiro/action@v0.0.1
