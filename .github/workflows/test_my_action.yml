@@ -6,5 +6,5 @@ jobs:
   reusable_workflow_job:
     runs-on: ubuntu-latest
     steps:
-    - uses: nitaiapiiro/govulncheck-action@v0.0.2
+    - uses: nitaiapiiro/govulncheck-action@latest
 
