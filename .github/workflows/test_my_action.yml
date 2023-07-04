@@ -1,9 +1,19 @@
-name: test-my-govuln
-run-name: test
-on: push
+name: Vulnerability Check
+
+on:
+  push:
+    branches:
+      - '*'
 
 jobs:
-  reusable_workflow_job:
+  vulnerability_check:
     runs-on: ubuntu-latest
+
     steps:
-    - uses: nitaiapiiro/govulncheck-action@v0.0.7
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run gosec
+        uses: nitaiapiiro/govulncheck-action@v0.0.7
+        with:
+          path: .
