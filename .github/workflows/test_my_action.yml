@@ -14,4 +14,6 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Run gosec
-        run: docker run --rm -v $(pwd):/app -w /app nitaiapiiro/govulncheck:v0.0.7 gosec ./...
+        uses: nitaiapiiro/govulncheck-action@v0.0.7
+        with:
+          path: .
