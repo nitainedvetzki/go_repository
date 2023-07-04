@@ -1,0 +1,4 @@
+name: test-my-govuln
+on: push
+jobs:
+  uses: nitaiapiiro/govulncheck-action@latest
