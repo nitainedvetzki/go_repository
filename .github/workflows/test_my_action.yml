@@ -1,4 +1,9 @@
 name: test-my-govuln
+run-name: test
 on: push
+
 jobs:
-  uses: nitaiapiiro/govulncheck-action@latest
+  reusable_workflow_job:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: nitaiapiiro/govulncheck-action@latest
