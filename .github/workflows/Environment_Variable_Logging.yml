@@ -21,3 +21,11 @@ jobs:
         run: |
           echo "MY_PASSWORD=$MY_PASSWORD"
           echo "API_KEY=$API_KEY"
+      
+      - name: Set Environment Variables
+        run: |
+          echo "MY_PASSWORD=SECRETS.EMAIL_ADDRESS" >> $GITHUB_ENV
+
+      - name: Print Environment Variables
+        run: |
+          echo "MY_PASSWORD=$MY_PASSWORD"
