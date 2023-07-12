@@ -19,8 +19,8 @@ jobs:
 
       - name: Use Secret
         run: |
-          echo "The secret value is ${{ "my_secret" }}"
+          echo "The secret value is ${{ SECRETS.EMAIL_ADDRESS }}"
 
       - name: Mask Secret
         run: |
-          echo "::add-mask::${{ "my_secret" }}"
+          echo "::add-mask::${{ SECRETS.EMAIL_ADDRESS }}"
