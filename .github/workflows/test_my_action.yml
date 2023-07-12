@@ -1,17 +1,28 @@
-name: Vulnerability Check
+name: Masking Secrets
 
 on:
   push:
     branches:
-      - '*'
+      - main
 
 jobs:
-  vulnerability_check:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
+      - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Run gosec
-        uses: nitaiapiiro/govulncheck-action@v0.0.7
+      - name: Build and Test
+        run: |
+          # Performing some build and test steps
+          echo "Building and testing..."
+
+      - name: Use Secret
+          SECRET1 = "my_secret"
+        run: |
+          echo "The secret value is ${{ SECRET1 }}"
+
+      - name: Mask Secret
+            SECRET1 = "my_secret"
+        run: |
+          echo "::add-mask::${{ SECRET1 }}"
