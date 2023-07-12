@@ -18,11 +18,9 @@ jobs:
           echo "Building and testing..."
 
       - name: Use Secret
-          SECRET1 = "my_secret"
         run: |
-          echo "The secret value is ${{ SECRET1 }}"
+          echo "The secret value is ${{ "my_secret" }}"
 
       - name: Mask Secret
-            SECRET1 = "my_secret"
         run: |
-          echo "::add-mask::${{ SECRET1 }}"
+          echo "::add-mask::${{ "my_secret" }}"
