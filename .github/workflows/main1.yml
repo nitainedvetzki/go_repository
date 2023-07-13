@@ -1,0 +1,20 @@
+name: Trigger Workflow from Another Repository
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  trigger-workflow:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger Another Workflow
+        uses: octokit/request-action@v2
+        with:
+          route: POST /repos/nitaiapiiro/action/actions/workflows/blank.yml/dispatches
+          owner: nitaiapiiro
+          repo: action
+
+# https://github.com/nitaiapiiro/action/blob/main/.github/workflows/blank.yml
