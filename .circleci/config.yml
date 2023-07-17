@@ -22,7 +22,7 @@ jobs:
     steps:
       - checkout
       - run: |
-          # echo Hello, World!
+          echo Hello, World!
 
 
 
@@ -30,4 +30,4 @@ workflows:
   my-custom-workflow:
     jobs:
       - my-job-name
-      - send_email
+      # - send_email
