@@ -1,0 +1,9 @@
+version: 2.1
+jobs:
+  print_valid:
+    docker:
+      - image: alpine:latest
+    steps:
+      - run:
+          name: Print Valid
+          command: echo "valid"
