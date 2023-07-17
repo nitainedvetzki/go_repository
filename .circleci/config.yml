@@ -16,15 +16,13 @@ jobs:
           name: Send Email
           command: |
             echo "This is the email content." | mail -s "CircleCI Email Notification" "$MY_EMAIL"
-
-
+            
   my-job-name:
     executor: my-custom-executor
     steps:
       - checkout
       - run: |
-          # echo Hello, World! && mail -s "CircleCI Email Notification" "$MY_EMAIL"
-
+          # echo Hello, World!
 
 
 
@@ -32,3 +30,4 @@ workflows:
   my-custom-workflow:
     jobs:
       - my-job-name
+      - send_email
