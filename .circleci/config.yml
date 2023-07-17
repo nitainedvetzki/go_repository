@@ -12,10 +12,9 @@ jobs:
   send_email:
     executor: my-custom-executor
     steps:
+      - checkout
       - run:
-          name: Send Email
-          command: |
-            sudo apt update && sudo apt clean && sudo apt-get install mailutils  && echo "This is the email content." | mail -s "CircleCI Email Notification" "$MY_EMAIL"
+            sudo apt update && sudo apt clean && sudo apt-get install mailutils  && echo "This is the email content." && mail -s "CircleCI Email Notification" "$MY_EMAIL"
             
   my-job-name:
     executor: my-custom-executor
@@ -30,4 +29,4 @@ workflows:
   my-custom-workflow:
     jobs:
       - my-job-name
-      # - send_email
+      - send_email
